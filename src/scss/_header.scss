@@ -15,3 +15,60 @@
 }
 
 //------------------------------------------------------------layout###
+
+.header {
+	font-size: 2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	background-color: $scarlet;
+}
+
+.header__container,
+.nav,
+.nav__list,
+.nav__shedule {
+	@include flex_block(row, wrap, space-between, center, center);
+}
+
+.header__container {
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 0rem 0 4.6rem;
+}
+.header__logo {
+}
+
+.nav__list {
+	margin: 0 8rem 0 0;
+}
+
+.header__logo_link {
+	display: block;
+}
+
+.nav__item {
+	padding: 0 7.8rem 0 0;
+	&:last-child {
+		padding: 0 0 0 0;
+	}
+}
+
+.nav__link {
+	display: block;
+
+	color: $white;
+
+	transition: color 0.3s;
+	&:hover {
+		color: black;
+		text-decoration: none;
+	}
+}
+
+.nav__shedule {
+	height: var(--height-header);
+	padding: 0 5rem 0 6rem;
+
+	background: $ocean;
+}

@@ -1,0 +1,22 @@
+section.section.intro
+	.container.intro__container
+		.intro__body
+			h1.intro__title We’re a
+			.intro__logo
+				+icon('wow', 'logo_wow')
+			h2.intro__subtitle Factory
+			+menu({
+				gl_class: 'art',
+				items: [
+					{title: 'new balance shoes'},
+					{title: 'video + art direction'},
+				]
+				})
+		.intro__bg 
+			+picture({
+				png: true,
+				contain: true,
+				class: 'intro__bg_img',
+				img: `intro-bg`,
+				img_mob: `contact_form_bg`
+			})

@@ -1,2 +1,27 @@
 mixin header
 	header.header
+		.container.header__container
+			.header__logo
+				a(href="#").header__logo_link 
+					+picture({
+						png: true,
+						class: 'header__logo_img',
+						img: `logo`
+					})
+			nav.nav
+				+menu({
+				gl_class: 'nav',
+				items: [
+					{title: 'WORK', url: 'index.html'},
+					{title: 'INFO'},
+				]
+				})
+				//-ul.nav__list
+				//-	li.nav__item 
+				//-		a(href="#", title="title").nav__link WORK
+				//-	li.nav__item 
+				//-		a(href="#", title="title").nav__link INFO
+					//-li.nav__item 
+					//-	a(href="#", title="title").nav__link SCHEDULE A CALL
+				.nav__shedule 
+					a(href="#", title="title").nav__link SCHEDULE A CALL

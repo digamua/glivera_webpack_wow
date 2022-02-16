@@ -1,0 +1,35 @@
+.art__list {
+  position: absolute;
+  bottom: 3.8rem;
+  left: 5.2rem;
+  z-index: 1;
+
+  @include flex_block(row, wrap, flex-start, center, center);
+
+  font-size: 1.9rem;
+  letter-spacing: -0.04rem;
+}
+
+.art__item {
+  &::after {
+    content: "|";
+    padding: 0 5px;
+  }
+
+  &:last-child {
+    padding: 0;
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.art__link {
+  text-transform: uppercase;
+  color: $white;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $black;
+    text-decoration: none;
+  }
+}
