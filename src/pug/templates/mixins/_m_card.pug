@@ -1,18 +1,6 @@
 mixin card(cardArray)
-	each e in cardArray.items
-		.card
-			//-.card__title= e.title
-			+menu({
-				gl_class: 'art',
-				items: [
-					{title: e.title, url: e.url}
-				]
-				})
-			.card__image
-				a(href=e.url) 
-					+picture({
-						contain: true,
-						class: 'card__img',
-						img: e.img
-					})
-//-						class: e.class,
+	.card 
+		.card__image
+			a(href=cardArray.url)
+				+picture({contain: true, class: 'card__img', img: cardArray.img})
+				block 

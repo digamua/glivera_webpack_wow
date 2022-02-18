@@ -10,6 +10,11 @@
   letter-spacing: -0.04rem;
 }
 
+.art__list.small {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .art__item {
   &::after {
     content: "|";

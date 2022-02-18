@@ -1,52 +1,72 @@
-section.product 
+-
+
+	let products = [
+		{
+			url: 'index.html',
+			img: 'item1',
+			mod: 'small',
+			subUrl: [{link: 'DISCONNECT'}]},
+		{
+			url: 'index2.html', 
+			img: 'item2', 
+			mod: 'small', 
+			subUrl: [{link: 'MIT'}]},
+		{
+			url: 'index3.html', 
+			img: 'item3', 
+			mod: 'small', 
+			subUrl: [{link: 'FABRK'}]
+		},
+		{
+			url: 'index4.html', 
+			img: 'banner2',
+			mod: 'big', 
+			video:true,
+			videoLink: 'https://youtube.com', 
+			subUrl: [{link: 'PAYPAL'},{link: 'EDITORIAL + MOTION'}],
+			prodNotes: [{link: 'Your nimble team is waiting!'}, {link: '339.229.0066'}]
+		},
+		{
+		url: 'index5.html', 
+		img: 'item4',
+		mod: 'midlle', 
+		},
+		{
+		url: 'index6.html',
+		img: 'item5',
+		mod: 'small',
+		subUrl: [{link: 'HOE'},{link: 'AUDIOGRAMS'}]
+		},
+		{
+		url: 'index7.html', 
+		img: 'item6',
+		mod: 'small'
+		},
+		{
+		url: 'index8.html', 
+		img: 'item7',
+		mod: 'midlle',
+		subUrl: [{link: 'F1ZZ'},{link: 'BRANDING + ANIMATION'}]
+		}
+	];
+
+section.section.product
 	.container.product__container
-		.product__body
-			.product__items
-				.product__item.product__item_col1
-					+card ({
-						items:[{
-							title: 'DISCONNECT', url: 'index.html', img: 'item1' }]
-						})
-				.product__item.product__item_col1
-					+card ({
-						items:[{
-							title: 'MIT', url: 'index2.html', img: 'item2'}]
-						})
-				.product__item.product__item_col1
-					+card ({
-						items:[{
-							title: 'FABRK', url: 'index3.html', img: 'item3'}]
-						})
-				.product__item.product__item_col3
-					+menu({
-					gl_class: 'product_notes',
-					items: [
-						{title: 'Your nimble team is waiting!'},
-						{title: '339.229.0066'},
-					]
-					})
-					
-					+card ({
-						items:[{
-							title: 'PAYPAL | EDITORIAL + MOTION', url: 'index4.html', img: 'banner2'}]
-						})
-				.product__item.product__item_col2
-					+card ({
-						items:[{
-							url: 'index5.html', img: 'item4'}]
-						})
-				.product__item.product__item_col1
-					+card ({
-						items:[{
-							title: 'HOE | AUDIOGRAMS', url: 'index6.html', img: 'item5'}]
-						})
-				.product__item.product__item_col1
-					+card ({
-						items:[{
-						url: 'index7.html', img: 'item6'}]
-						})
-				.product__item.product__item_col2
-					+card ({
-						items:[{
-							title: 'F1ZZ | BRANDING + ANIMATION', url: 'index8.html', img: 'item7'}]
-						})
+		ul.product__items
+			each item in products
+				- mod = item.mod || ''
+				li(class=`product__item ${mod}`)
+					+card(item)
+					if item.prodNotes
+						.card_notes
+								each prodNote in item.prodNotes
+									a(class=`card_notes__link`)= prodNote.link
+					if (item.video == true)
+						.play_video
+								a(href=item.videoLink target="_blank")
+									+icon('play', 'icon_play_mod')
+					if item.subUrl
+						ul(class=`art__list ${mod}`)
+							each subItem in item.subUrl
+								li.art__item
+									a(href=item.url).art__link= subItem.link

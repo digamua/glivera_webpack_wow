@@ -6,71 +6,14 @@
   position: relative;
 }
 
-.product_notes__list {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 66.667%;
-  height: 10rem;
-
-  @include flex_block(row, wrap, space-between, stretch, center);
-  padding: 0 4.6rem;
-
-  background-color: $scarlet;
-}
-
-.product_notes__link {
-  color: $white;
-  transition: color 0.3s ease;
-  &:hover {
-    color: $black;
-    text-decoration: none;
-  }
-}
-
-.product__item_col1 {
+.product__item.small {
   width: 33.333%;
 }
 
-.product__item_col2 {
+.product__item.midlle {
   width: 66.667%;
 }
 
-.product__item_col3 {
+.product__item.big {
   width: 100%;
-}
-
-.card,
-.card__image,
-.card__img {
-  height: 100%;
-}
-
-.card__img {
-  &:hover {
-    img {
-      opacity: 0.8;
-    }
-  }
-}
-
-.card {
-  position: relative;
-}
-.card__title {
-  position: absolute;
-  bottom: 3rem;
-  left: 5rem;
-
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.card__img {
-  img {
-    display: block;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
 }

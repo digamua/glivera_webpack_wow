@@ -1,0 +1,59 @@
+.card {
+  position: relative;
+}
+
+.card,
+.card__image,
+.card__img {
+  height: 100%;
+}
+
+.card__title {
+  position: absolute;
+  bottom: 3rem;
+  left: 5rem;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card__img {
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card__img {
+  &:hover {
+    img {
+      opacity: 0.9;
+    }
+  }
+}
+
+.card_notes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 66.667%;
+  height: 10rem;
+
+  @include flex_block(row, wrap, space-between, stretch, center);
+  padding: 0 4.6rem;
+
+  background-color: $scarlet;
+}
+
+.card_notes__link {
+  font-size: 2.5rem;
+  color: $white;
+  transition: color 0.3s ease;
+  &:hover {
+    cursor: pointer;
+    color: $black;
+    text-decoration: none;
+  }
+}
