@@ -57,3 +57,17 @@
     text-decoration: none;
   }
 }
+
+@include bp($point_2, max) {
+  .card_notes {
+    width: 100%;
+    height: 6rem;
+    padding: 0 2.6rem;
+  }
+}
+
+@include bp($point_2, max) {
+  .card_notes__link {
+    font-size: 1.8rem;
+  }
+}

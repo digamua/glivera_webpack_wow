@@ -1,3 +1,23 @@
+-
+
+	let social1 = [
+		{img: 'brand1'},
+		{img: 'brand2'},
+		{img: 'brand1'},
+		{img: 'brand2'},
+		{img: 'brand1'},
+		{img: 'brand2'},
+		{img: 'brand1'},
+		{img: 'brand2'}
+		];
+
+
 mixin footer
+
 	footer.footer
-		h2 FOOTER
+		.container.footer__container
+			ul.footer__items
+				each item in social1
+					li.footer__item
+						a(href="#")
+							+icon(item.img, `icon_footer_mod`)

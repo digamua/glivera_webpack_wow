@@ -38,3 +38,12 @@
     text-decoration: none;
   }
 }
+
+@include bp($point_5, max) {
+  .art__list {
+    bottom: 2.8rem;
+    left: 2.2rem;
+
+    font-size: 1.6rem;
+  }
+}

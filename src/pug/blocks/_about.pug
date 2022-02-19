@@ -1,7 +1,40 @@
+-
+
+	let about = [
+		{url: 'index8.html', img: 'item8', mod: 'midlle', video: true, videoLink: 'https://google.com',
+		subUrl: [{link: 'HBO + NCTA'},{link: 'ANIMATION'}]
+		}];
+
+	let social = [
+		{url: 'https://facebook.com/', img: 'facebook'},
+		{url: 'https://www.instagram.com/', img: 'instagram'},
+		{url: 'https://vimeo.com/', img: 'vimeo'},
+		{url: 'https://www.youtube.com/', img: 'youtube'}
+		];
+	let content = 'Nimblebot continues to impress and wow us with their dedicated attitude and over-the-top delivery, everytime.'
+	let author = 'Usman Ahmed<br>Head of Global Policy'
+
 section.section.about
 	.container.about__container
 		.about__items
-			.about__info
-				p info
-			.about__video
-				p video
+			.about__item.small
+				.about__item_info 
+					.about__item_content!= content
+					.about__item_author!= author
+				ul.about__item_socials
+					each item in social
+						li.about__item_social
+							a(href=item.url)
+								+icon(item.img, `icon_about_mod`)
+			.about__item.midlle
+				each item in about 
+					+card(item)
+						if (item.video == true)
+							.play_video
+									a(href=item.videoLink target="_blank")
+										+icon('play', 'icon_play_mod')
+						if item.subUrl
+							ul(class=`art__list ${mod}`)
+								each subItem in item.subUrl
+									li.art__item
+										a(href=item.url).art__link= subItem.link

@@ -5,5 +5,26 @@
 
 	font-size: 1rem;
 
+	background-color: $white;
+
 	will-change: transform;
+}
+
+.footer__items {
+	@include flex_block(row, wrap, space-between, center, center);
+	min-height: 10rem;
+	padding: 0 7.4rem;
+}
+
+.footer__item {
+	padding: 0 1rem 1rem 0;
+	&:last-child {
+		padding: 0 0 1rem 0;
+	}
+}
+
+@include bp($point_2, max) {
+	.footer__items {
+		padding: 0 2rem;
+	}
 }

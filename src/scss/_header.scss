@@ -24,10 +24,17 @@
 	background-color: $scarlet;
 }
 
+.nav {
+	max-width: 75%;
+}
+
 .header__container,
 .nav,
-.nav__list,
 .nav__shedule {
+	@include flex_block(row, nowrap, space-between, center, center);
+}
+
+.nav__list {
 	@include flex_block(row, wrap, space-between, center, center);
 }
 
@@ -71,4 +78,35 @@
 	padding: 0 5rem 0 6rem;
 
 	background: $ocean;
+}
+
+@include bp($point_2, max) {
+	.nav__list {
+		margin: 0 3rem 0 0;
+	}
+
+	.header__container {
+		padding: 0 2rem 0 2rem;
+	}
+
+	.nav__item {
+		padding: 0 2.4rem 0 0;
+	}
+
+	.nav__shedule {
+		height: 100%;
+		padding: 0 1rem 0 1rem;
+	}
+}
+
+@include bp($point_5, max) {
+	.header__container,
+	.nav,
+	.nav__shedule {
+		@include flex_block(row, wrap, space-between, center, center);
+	}
+
+	.nav {
+		max-width: 100%;
+	}
 }
