@@ -1,6 +1,6 @@
 mixin card(cardArray)
 	.card 
 		.card__image
-			a(href=cardArray.url)
+			a(href=cardArray.url).card__image_link 
 				+picture({contain: true, class: 'card__img', img: cardArray.img})
 				block 

@@ -2,12 +2,33 @@
   @include flex_block(row, wrap, space-between, stretch, center);
 }
 
-.about__item.small {
-  width: 33.333%;
+.about__item {
+
+  @include bp($point_2) {
+    &:nth-child(1) {
+      order: 2;
+    }
+    &:nth-child(2) {
+      order: 1;
+    }
+  }
 }
 
-.about__item.midlle {
+.about__item--small {
+  width: 33.333%;
+
+  @include bp($point_2) {
+    @include flex_block(row, wrap, center, center, center);
+    width: 100%;
+  }
+}
+
+.about__item--midlle {
   width: 66.667%;
+
+  @include bp($point_2) {
+    width: 100%;
+  }
 }
 
 .about__item_info {
@@ -16,6 +37,18 @@
   padding: 5.4rem;
 
   background-color: $scarlet;
+
+  @include bp($point_2) {
+    min-height: 100%;
+    width: 66.667%;
+    padding: 2.4rem;
+  }
+
+  @include bp($point_5) {
+      min-height: auto;
+      width: 100%;
+    
+  }
 }
 
 .about__item_content {
@@ -23,6 +56,10 @@
 
   font-size: 2.5rem;
   font-weight: 700;
+
+  @include bp($point_5) {
+    font-size: 1.8rem;
+  }
 }
 
 .about__item_author {
@@ -32,56 +69,20 @@
 .about__item_socials {
   @include flex_block(row, wrap, flex-start, center, flex-end);
   padding: 5rem;
-}
 
-.about__item_social {
-  &:not(:last-child) {
-    padding: 0 2.6rem 0 0;
-  }
-}
-
-@include bp($point_2, max) {
-  .about__item.small {
-    @include flex_block(row, wrap, center, center, center);
-    width: 100%;
-  }
-
-  .about__item.midlle {
-    width: 100%;
-  }
-
-  .about__item {
-    &:nth-child(1) {
-      order: 2;
-    }
-    &:nth-child(2) {
-      order: 1;
-    }
-  }
-
-  .about__item_info {
-    min-height: 100%;
-    width: 66.667%;
-    padding: 2.4rem;
-  }
-  .about__item_socials {
+  @include bp($point_2) {
     @include flex_block(row, wrap, center, center, center);
     width: 33.333%;
     padding: 2rem;
   }
+
+  @include bp($point_5) {
+    width: 100%;
+  }
 }
 
-@include bp($point_5, max) {
-  .about__item_info {
-    min-height: auto;
-    width: 100%;
-  }
-
-  .about__item_content {
-    font-size: 1.8rem;
-  }
-
-  .about__item_socials {
-    width: 100%;
+.about__item_social {
+  &:not(:last-child) {
+    margin: 0 2.6rem 0 0;
   }
 }

@@ -2,29 +2,27 @@
   @include flex_block(row, wrap, space-between, stretch, center);
 }
 
-.product__item.small {
-  width: 33.333%;
-}
-
-.product__item.midlle {
-  width: 66.667%;
-}
-
-.product__item.big {
-  width: 100%;
-}
-
 .product__item {
   position: relative;
-}
 
-@include bp($point_2, max) {
-  .product__item.small,
-  .product__item.midlle {
-    width: 50%;
+  &.product__item--small {
+    width: 33.333%;
   }
 
-  .product__item {
+  &.product__item--midlle {
+    width: 66.667%;
+  }
+
+  &.product__item--big {
+    width: 100%;
+  }
+
+  @include bp($point_2) {
+    &.product__item--small,
+    &.product__item--midlle {
+      width: 50%;
+    }
+
     &:nth-child(1) {
       order: 1;
     }
@@ -52,24 +50,14 @@
     }
   }
 
-  .card_notes {
-    width: 100%;
-    height: 7rem;
-    padding: 0 2.6rem;
-  }
-}
-
-@include bp($point_5, max) {
-  .product__item {
+  @include bp($point_5) {
     min-height: 32rem;
-  }
 
-  .product__item.small,
-  .product__item.midlle {
-    width: 100%;
-  }
+    &.product__item--small,
+    &.product__item--midlle {
+      width: 100%;
+    }
 
-  .product__item {
     &:nth-child(1) {
       order: 1;
     }

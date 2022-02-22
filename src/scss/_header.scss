@@ -41,9 +41,16 @@
 .header__container {
 	height: 100%;
 	margin: 0 auto;
-	padding: 0 0rem 0 4.6rem;
 }
 .header__logo {
+	margin: 0 0rem 0 4.6rem;
+	max-width: 15.6rem;
+}
+
+.header__logo_img img{
+	display: block;
+	width: 100%;
+	object-fit: cover;
 }
 
 .nav__list {
@@ -77,7 +84,14 @@
 	height: var(--height-header);
 	padding: 0 5rem 0 6rem;
 
+	color: $white;
+
 	background: $ocean;
+
+	&:hover {
+		color: black;
+		text-decoration: none;
+	}
 }
 
 @include bp($point_2, max) {

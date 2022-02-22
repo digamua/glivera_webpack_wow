@@ -7,7 +7,13 @@
 
 .intro__body {
   @include flex_block(column, wrap, center, center, center);
-  padding: 14.8rem 5rem 21.6rem 5rem;
+  min-height: 55rem;
+  padding: 5rem;
+
+  @include bp($point_5) {
+    min-height: 65vh;
+    padding: 2rem 2rem 5rem 2rem;
+  }
 }
 
 .intro__title {
@@ -47,18 +53,13 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-  }
 }
 
-@include bp($point_5, max) {
-  .intro__body {
-    padding: 10rem 1rem 10rem 1rem;
-  }
+.intro__bg_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
